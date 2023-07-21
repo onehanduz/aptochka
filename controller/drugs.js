@@ -36,10 +36,11 @@ const add = async (req, res) => {
   try {
     const newDrugs = await pool.query(
       `
-      INSERT INTO drugs(spot, name, company, price, count, date_to, given_price, companent) VALUES ($1, $2, $3, $4, $5, $6, $7, $8)`,
+      INSERT INTO drugs(spot, name, type, company, price, count, date_to, given_price, companent) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9)`,
       [
         req.body.spot,
         req.body.name,
+        req.body.type,
         req.body.company,
         req.body.price,
         req.body.count,
@@ -60,10 +61,11 @@ const update = async (req, res) => {
     const oldDrugs = await pool.query("SELECT * FROM drugs WHERE id=$1", [id]);
     const updateDrugs = await pool.query(
       `
-      UPDATE drugs SET spot=$1, name=$2, company=$3, price=$4, count=$5, date_to=$6, given_price=$7, companent=$8 WHERE id=$9`,
+      UPDATE drugs SET spot=$1, name=$2, type=$3 company=$4, price=$5, count=$6, date_to=$7, given_price=$8, companent=$9 WHERE id=$10`,
       [
         req.body.spot ? req.body.spot : oldDrugs.rows[0].spot,
         req.body.name ? req.body.name : oldDrugs.rows[0].name,
+        req.body.type ? req.body.type : oldDrugs.rows[0].type,
         req.body.company ? req.body.company : oldDrugs.rows[0].company,
         req.body.price ? req.body.price : oldDrugs.rows[0].price,
         req.body.count ? req.body.count : oldDrugs.rows[0].count,
