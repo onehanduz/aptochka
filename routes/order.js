@@ -6,7 +6,7 @@ router.get("/spot", async (req, res) => {
   try {
     let page = req.query.page || 0;
     if (page > 0) page--;
-    let limit = 100;
+    let limit = 1000;
     let offset = page * limit;
     const byId = await pool.query(
       "SELECT * FROM drugs ORDER BY spot OFFSET $1 LIMIT $2",
@@ -22,7 +22,7 @@ router.get("/dspot", async (req, res) => {
   try {
     let page = req.query.page || 0;
     if (page > 0) page--;
-    let limit = 100;
+    let limit = 1000;
     let offset = page * limit;
     const dspot = await pool.query(
       "SELECT * FROM drugs ORDER BY spot DESC OFFSET $1 LIMIT $2",
@@ -38,7 +38,7 @@ router.get("/date", async (req, res) => {
   try {
     let page = req.query.page || 0;
     if (page > 0) page--;
-    let limit = 2;
+    let limit = 1000;
     let offset = page * limit;
     const date = await pool.query(
       "SELECT * FROM drugs ORDER BY date_to OFFSET $1 LIMIT $2",
@@ -54,7 +54,7 @@ router.get("/ddate", async (req, res) => {
   try {
     let page = req.query.page || 0;
     if (page > 0) page--;
-    let limit = 2;
+    let limit = 1000;
     let offset = page * limit;
     const ddate = await pool.query(
       "SELECT * FROM drugs ORDER BY date_to DESC OFFSET $1 LIMIT $2",

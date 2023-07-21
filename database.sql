@@ -5,7 +5,7 @@ CREATE TABLE drugs(
     company VARCHAR(128),
     price VARCHAR(16) NOT NULL,
     count VARCHAR(8),
-    date_to DATE NOT NULL,
+    date_to DATE,
     given_price VARCHAR(16),
     companent VARCHAR(255)
 

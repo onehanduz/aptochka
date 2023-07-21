@@ -1,0 +1,84 @@
+<a href="/" class="bs-light">
+  <button type="button" class="btn btn-primary">QAYTISH</button>
+</a>
+<form method="post" action={{action}}>
+  <div class="row m-1">
+    <div class="col">
+      <input
+        name="spot"
+        type="text"
+        class="form-control"
+        placeholder="Joyi*"
+        required
+      />
+    </div>
+    <div class="col">
+      <input
+        name="name"
+        type="text"
+        class="form-control"
+        placeholder="Nomi*"
+        required
+      />
+    </div>
+  </div>
+  <div class="row m-1">
+    <div class="col">
+      <input
+        name="company"
+        type="text"
+        class="form-control"
+        placeholder="Kampaniyasi"
+      />
+    </div>
+    <div class="col">
+      <input
+        name="price"
+        type="number"
+        class="form-control"
+        placeholder="Narxi*"
+        required
+        autocomplete="off"
+      />
+    </div>
+  </div>
+  <div class="row m-1">
+    <div class="col">
+      <input
+        name="count"
+        type="number"
+        class="form-control"
+        placeholder="Soni"
+      />
+    </div>
+    <div class="col">
+      <input
+        name="date_to"
+        value="2023-12-31"
+        type="date"
+        class="form-control"
+        placeholder="Amal qilish muddati"
+      />
+    </div>
+  </div>
+  <div class="row m-1">
+    <div class="col">
+      <input
+        name="given_price"
+        type="number"
+        class="form-control"
+        placeholder="Kelgan narxi"
+        autocomplete="off"
+      />
+    </div>
+    <div class="col">
+      <input
+        name="companents"
+        type="text"
+        class="form-control"
+        placeholder="Tarkibi"
+      />
+    </div>
+  </div>
+  <button type="submit" class="btn btn-primary m-3">Yuborish</button>
+</form>

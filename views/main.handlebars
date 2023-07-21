@@ -1,0 +1,53 @@
+<a href="/create">
+  <button type="button" class="btn btn-primary">QO'SHISH</button>
+</a>
+<h3>jami: {{jami}}</h3>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Joyi
+        <a href="/?order=spot">
+          <button type="button">\/</button>
+        </a>
+        <a href="/?order=dspot">
+          <button type="button">/\</button>
+        </a>
+      </th>
+      <th scope="col">Nomi</th>
+      <th scope="col">Ishlab chiqaruvchi</th>
+      <th scope="col">Narxi</th>
+      <th scope="col">Qolgan</th>
+      <th scope="col">Yaroqlilik muddati
+        <a href="/?order=date">
+          <button type="button">\/</button>
+        </a>
+        <a href="/?order=ddate">
+          <button type="button">/\</button>
+        </a>
+      </th>
+      <th scope="col">Tarkibi</th>
+      <th scope="col">Sozlash</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each drugs}}
+      <tr>
+        <th scope="row">{{spot}}</th>
+        <td>{{name}}</td>
+        <td>{{company}}</td>
+        <td>{{price}}</td>
+        <td>{{count}}</td>
+        <td>{{dateFormat date_to "YYYY-MM"}}</td>
+        <td>{{companent}}</td>
+        <td>
+          <a href="/delete/{{id}}">
+            <button type="button" class="btn btn-danger">O'chirish</button>
+          </a>
+          <a href="/edit/{{id}}">
+            <button type="button" class="btn btn-info">Tahrir</button>
+          </a>
+        </td>
+      </tr>
+    {{/each}}
+  </tbody>
+</table>
