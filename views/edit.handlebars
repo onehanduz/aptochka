@@ -9,7 +9,7 @@
         type="text"
         class="form-control"
         placeholder="Joyi*"
-        required
+        value={{drug.spot}}
       />
     </div>
     <div class="col">
@@ -18,7 +18,7 @@
         type="text"
         class="form-control"
         placeholder="Nomi*"
-        required
+        value={{drug.name}}
       />
     </div>
   </div>
@@ -29,6 +29,7 @@
         type="text"
         class="form-control"
         placeholder="Shakli"
+        value={{drug.type}}
       />
     </div></div>
   <div class="row m-1">
@@ -38,6 +39,7 @@
         type="text"
         class="form-control"
         placeholder="Kampaniyasi"
+        value={{drug.company}}
       />
     </div>
     <div class="col">
@@ -46,8 +48,8 @@
         type="number"
         class="form-control"
         placeholder="Narxi*"
-        required
         autocomplete="off"
+        value={{drug.price}}
       />
     </div>
   </div>
@@ -58,15 +60,16 @@
         type="number"
         class="form-control"
         placeholder="Soni"
+        value={{drug.count}}
       />
     </div>
     <div class="col">
       <input
         name="date_to"
-        value="2023-12-31"
         type="date"
         class="form-control"
         placeholder="Amal qilish muddati"
+        value={{dateFormat drug.date_to "YYYY-MM-DD"}}
       />
     </div>
   </div>
@@ -78,6 +81,7 @@
         class="form-control"
         placeholder="Kelgan narxi"
         autocomplete="off"
+        value={{drug.given_price}}
       />
     </div>
     <div class="col">
@@ -86,8 +90,9 @@
         type="text"
         class="form-control"
         placeholder="Tarkibi"
+        value={{drug.companent}}
       />
     </div>
   </div>
-  <button type="submit" class="btn btn-primary m-3">Yuborish</button>
+  <button type="submit" class="btn btn-primary m-3">Yangilash</button>
 </form>
